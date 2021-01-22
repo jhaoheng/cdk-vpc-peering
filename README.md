@@ -1,14 +1,17 @@
-# Welcome to your CDK TypeScript project!
+![img](./assets/cdk-peering.svg)
 
-This is a blank project for TypeScript development with CDK.
+# deploy
+- `cdk deploy -c keyPairName=...`
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+![deploy](./assets/deploy.png)
 
-## Useful commands
+# validate
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+1. `ssh -i $KeyPairName ec2-user@$Host_1_Public_IP`
+2. `ping $Host_2_Private_IP`
+
+![validate](./assets/validate.png)
+
+# destroy
+
+- `cdk destroy`
